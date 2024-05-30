@@ -21,3 +21,9 @@ b
 2src/com/luxoft/bankapp/domain/CheckingAccount.java,5/f/5fb484ce89a3321ee401058ad614a907e1333ea6
 d
 4src/com/luxoft/bankapp/tests/AccountFactoryTest.java,7/6/76f9d0c1c36283b79e5a32353b4da04a44a83787
+X
+(src/com/luxoft/bankapp/utils/Params.java,4/7/477d454095b452e2dcedba89c7d2d5400281c1f1
+_
+/src/com/luxoft/bankapp/domain/AccountCache.java,f/2/f2cd69f0e604c770dccfb5c1a489e75e699eaa70
+b
+2src/com/luxoft/bankapp/tests/AccountCacheTest.java,b/9/b9c69218da37907ffd4050ec2262df052f1af5e9

@@ -1,13 +1,15 @@
 
-a
-java:S13017"KReplace this "switch" statement by "if" statements to increase readability.(ÜŸ•
-f
-java:S1301i"KReplace this "switch" statement by "if" statements to increase readability.(Î€ƒ½ûÿÿÿÿ
-i
-java:S1104"SMake balance a static final constant or non-public and provide accessors if needed.(æ¥á
-N
-java:S5993"9Change the visibility of this constructor to "protected".(é·ğ#
-7	java:S1317""Add a default case to this switch.(ÜŸ•
-\
-java:S1126b"AReplace this if-then-else statement by a single return statement.(ö“î¼ûÿÿÿÿ
-<	java:S131i""Add a default case to this switch.(Î€ƒ½ûÿÿÿÿ
+‡
+java:S13017"KReplace this "switch" statement by "if" statements to increase readability.(ÜŸ•J$5ce41d13-808b-4ed6-a0eb-b5ca6e8f74bf
+Œ
+java:S1301m"KReplace this "switch" statement by "if" statements to increase readability.(Î€ƒ½ûÿÿÿÿJ$af29d887-1c48-4678-9553-47211bf28b9d
+
+java:S1104"SMake balance a static final constant or non-public and provide accessors if needed.(æ¥áJ$594ec041-3999-49d3-83ed-c470739c7a7c
+t
+java:S5993"9Change the visibility of this constructor to "protected".(é·ğ#J$71f87ca9-7f3a-433b-bd45-70bf9680178c
+]	java:S1317""Add a default case to this switch.(ÜŸ•J$27ce77a6-b904-4b0b-a252-b6f2268378c1
+}
+java:S1126e"AReplace this if-then-else statement by a single return statement.(‹ÑÚ¢J$ed40a4bb-f58d-46a5-b75d-676dae635e05
+b	java:S131m""Add a default case to this switch.(Î€ƒ½ûÿÿÿÿJ$d3a0deee-60f4-4be2-b6e2-e2d3077e143b
+–
+java:S2975x"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(ª°Ÿİ8¹‰Ğü1J$6a9861db-febf-4aba-9306-69fa249b39ea
