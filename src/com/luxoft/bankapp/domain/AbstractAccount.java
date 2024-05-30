@@ -3,31 +3,37 @@ package com.luxoft.bankapp.domain;
 import com.luxoft.bankapp.exceptions.NotEnoughFundsException;
 import com.luxoft.bankapp.utils.Params;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 public abstract class AbstractAccount implements Account, Serializable, Cloneable {
 
+  @Serial
   private static final long serialVersionUID = -2272551373694344386L;
 
-  public static final int SAVING_ACCOUNT_TYPE = 1;
-  public static final int CHECKING_ACCOUNT_TYPE = 2;
+  private final int id;
 
-  private int id;
-  private int type;
+  private double balance;
+  private final Currency currency;
 
-  public double balance;
+  public Currency getCurrency() {
+    return currency;
+  }
 
-  public AbstractAccount(int id, double amount) {
+  public void setBalance(double balance) {
+    this.balance = balance;
+  }
+
+  protected AbstractAccount(int id, double amount) {
     this.id = id;
     this.balance = amount;
+    this.currency = new Currency("USD");
   }
 
-  public int getType() {
-    return type;
-  }
-
-  public void setType(int type) {
-    this.type = type;
+  protected AbstractAccount(int id, double amount, Currency currency) {
+    this.id = id;
+    this.balance = amount;
+    this.currency = currency;
   }
 
   @Override
@@ -49,18 +55,6 @@ public abstract class AbstractAccount implements Account, Serializable, Cloneabl
     }
 
     this.balance -= amount;
-  }
-
-  public double maximumAmountToWithdraw() {
-    switch (type) {
-      case SAVING_ACCOUNT_TYPE:
-        return balance;
-      case CHECKING_ACCOUNT_TYPE:
-        CheckingAccount checkingAccount = (CheckingAccount) this;
-        return checkingAccount.balance + checkingAccount.overdraft;
-    }
-
-    return 0;
   }
 
   @Override
@@ -98,22 +92,16 @@ public abstract class AbstractAccount implements Account, Serializable, Cloneabl
       return false;
     }
     AbstractAccount other = (AbstractAccount) obj;
-    if (id != other.id) {
-      return false;
-    }
-    return true;
+    return id == other.id;
   }
 
   public static Account parse(Params params) {
+    return switch (params.get("accountType")) {
+      case "s" -> SavingAccount.parse(params);
+      case "c" -> CheckingAccount.parse(params);
+      default -> null;
+    };
 
-    switch (params.get("accountType")) {
-      case "s":
-        return SavingAccount.parse(params);
-      case "c":
-        return CheckingAccount.parse(params);
-    }
-
-    return null;
   }
 
   @Override

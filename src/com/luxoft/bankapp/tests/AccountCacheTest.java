@@ -63,7 +63,7 @@ public class AccountCacheTest {
     assertEquals(
         "Expected overdraft to be 0.0",
         0.0,
-        ((CheckingAccount) checkingAccount).overdraft,
+        ((CheckingAccount) checkingAccount).getOverdraft(),
         0.0
     );
   }
